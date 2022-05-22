@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section class="colored-section container-fluid">
+        <h1 class="big-heading">FILTERS FOR TENANTS:</h1>
+    </section>
+    
+    <section class="white-section container-fluid">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+    
+            <div class="mb-3 form-div">
+                <label for="minimum_price " class="form-label">{{ form.minimum_price.label }}</label>
+                {{form.minimum_price(type="integer", class="form-control", id="minimum_price", placeholder="minimum price" ) }}
+            </div>
+    
+            <div class="mb-3 form-div">
+                <label for="maximum_price " class="form-label">{{ form.maximum_price.label }}</label>
+                {{form.maximum_price(type="integer", class="form-control", id="maximum_price", placeholder="maximum price" ) }}
+            </div>
+    
+    
+            <div class="mb-3 form-div">
+                <label for="location " class="form-label">{{ form.location.label }}</label>
+                {{form.location(type="string", class="form-control", id="location", placeholder="Location" ) }}
+            </div>
+    
+    
+            <div class="mb-3 form-div">
+                <label for="carpet_size " class="form-label">{{ form.carpet_size.label }}</label>
+                {{form.carpet_size(type="integer", class="form-control", id="carpet_size", placeholder="Phone Number" ) }}
+            </div>
+    
+    
+            {{ form.submit(class="btn-dark btn-lg download-button submit-button") }}
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    
+    <footer class="colored-section" id="footer">
+    
+        <div class="container-fluid">
+            <div class="footer-icons">
+                <a class="fa-brands fa-twitter footer-icon" href="https://twitter.com/" target="_blank"
+                    style="text-decoration: none; color: #fff"></a>
+                <a class="fa-brands fa-facebook-f footer-icon" href="https://www.facebook.com/" target="_blank"
+                    style="text-decoration: none; color: #fff"></a>
+                <a class="fa-brands fa-instagram footer-icon" href="https://www.instagram.com/" target="_blank"
+                    style="text-decoration: none; color: #fff"></a>
+                <a class="fa-solid fa-envelope footer-icon" href="https://www.gmail.com/" target="_blank"
+                    style="text-decoration: none; color: #fff"></a>
+            </div>
+            <p style="color: #fff;">© Copyright PriorityRentals</p>
+        </div>
+    
+    </footer>
+{%endblock%}

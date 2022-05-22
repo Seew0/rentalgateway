@@ -1,0 +1,87 @@
+  {%extends 'base.html'%}
+  {%block content%}
+
+{%if name%}
+  <h3> Listing added sucessfully!</h3>
+  {% for our_user in our_users %}
+    {{ our_user.listing_id }}.{{ our_user.name }} 
+    - {{ our_user.email }}-{{ our_user.location }}
+    - {{ our_user.contact }} - {{ our_user.pricing }}-
+   -  {{our_user.carpet_size}}- {{ our_user.BHK }}<br/>
+  {%endfor%}
+{%else%}
+  <section class="colored-section container-fluid">
+    <h1 class="big-heading">Enter the details of your property:</h1>
+  </section>
+  
+  <section class="white-section container-fluid">
+  <form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3 form-div">
+      <label for="name " class="form-label">{{ form.name.label }}</label>
+      {{form.name(type="string", class="form-control", id="name", placeholder="Sample Name" ) }}
+    </div>
+
+    <div class="mb-3 form-div">
+      <label for="email " class="form-label">{{ form.email.label }}</label>
+      {{form.email(type="email", class="form-control", id="email", placeholder="Email" ) }}
+    </div>
+
+    <div class="mb-3 form-div">
+      <label for="pricing2 " class="form-label">{{ form.pricing.label }}</label>
+      {{form.pricing(type="integer", class="form-control", id="pricing2", placeholder="Expected Rent" ) }}
+    </div>
+
+    <div class="mb-3 form-div">
+      <label for="location " class="form-label">{{ form.location.label }}</label>
+      {{form.location(type="string", class="form-control", id="location", placeholder="Location" ) }}
+    </div>
+
+    <div class="mb-3 form-div">
+      <label for="contacts " class="form-label">{{ form.contacts.label }}</label>
+      {{form.contacts(type="integer", class="form-control", id="contacts", placeholder="Phone Number" ) }}
+    </div>
+
+    <div class="mb-3 form-div">
+      <label for="carpet_size " class="form-label">{{ form.carpet_size.label }}</label>
+      {{form.carpet_size(type="integer", class="form-control", id="carpet_size", placeholder="Phone Number" ) }}
+    </div>
+    
+    
+    {{ form.submit(class="btn-dark btn-lg download-button submit-button") }}
+  </form>
+  </section>
+
+    <!-- Footer -->
+
+    <footer class="colored-section" id="footer">
+
+      <div class="container-fluid">
+        <div class="footer-icons">
+          <a class="fa-brands fa-twitter footer-icon" href="https://twitter.com/" target="_blank" style="text-decoration: none; color: #fff"></a>
+          <a class="fa-brands fa-facebook-f footer-icon" href="https://www.facebook.com/" target="_blank" style="text-decoration: none; color: #fff"></a>
+          <a class="fa-brands fa-instagram footer-icon" href="https://www.instagram.com/" target="_blank" style="text-decoration: none; color: #fff"></a>
+          <a class="fa-solid fa-envelope footer-icon" href="https://www.gmail.com/" target="_blank" style="text-decoration: none; color: #fff"></a>
+        </div>
+        <p style="color: #fff;">© Copyright PriorityRentals</p>
+      </div>
+  
+    </footer>
+  
+  
+  <!-- Bootstrap script -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <!-- <table>
+    {%for our_user in our_users %}
+    {{ our_user.id }}.{{ our_user.name }} 
+    - {{ our_user.email }}<br/>
+  {%endfor%}
+  </table> -->
+
+  
+
+  {%endif%}
+
+  {%endblock%}

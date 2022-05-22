@@ -1,0 +1,263 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+
+
+<body>
+
+  <section class="colored-section" id="title">
+    <div class="container-fluid">
+
+
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark ">
+
+        <a class="navbar-brand " href="#">PriorityRentals</a>
+
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="#footer">Contact</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="#pricing">Pricing</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="#cta">Rent</a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+
+
+
+
+      <!-- Title -->
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="big-heading">Find the perfect place for you to live.</h1>
+           <a type="button" class="btn btn-dark btn-lg download-button" href="{{url_for('filter')}}" target="_blank">Find
+            Property</a>
+          <a type="button" class="btn btn-outline-light btn-lg download-button" href="{{url_for('listing')}}"
+            target="_blank">List Property</a>
+        </div>
+        <div class="col-lg-6">
+          <img class="title-image" src="{{ url_for('static', filename='images/iphone6.png') }}" alt="iphone-mockup">
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Features -->
+
+  <section class="white-section" id="features">
+    <div class="container-fluid">
+      <div class="all-features row">
+
+        <div class="feature-div col-lg-4">
+          <i class="feature-icon fa-solid fa-circle-check"></i>
+          <h3 class="feature-title">Easy to use.</h3>
+          <p>So easy to use, even a child could do it.</p>
+        </div>
+
+        <div class="feature-div col-lg-4">
+          <i class="feature-icon fa-solid fa-bullseye"></i>
+          <h3 class="feature-title">Elite Clientele</h3>
+          <p>We have all the tenants, the best properties.</p>
+        </div>
+
+        <div class="feature-div col-lg-4">
+          <i class="feature-icon fa-solid fa-heart"></i>
+          <h3 class="feature-title">Guaranteed to work.</h3>
+          <p>You will find the house of your dreams here.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Testimonials -->
+
+  <section class="colored-section" id="testimonials">
+
+    <div id="carocaro" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-inner">
+        <div class="container-fluid carousel-item active">
+          <h2 class="testimonial-text">I no longer have to roam for finding a place to live. I've found the house of my
+            dreams on PriorityRentals.</h2>
+          <img class="testimonial-image" src="{{ url_for('static', filename='images/crocodile-img.jpg') }}"
+            alt="crocodile-profile">
+          <em>Pebbles, New York</em>
+        </div>
+        <div class="container-fluid carousel-item">
+          <h2 class="testimonial-text">My second house used to be be unused, but with PriorityRentals's help, I have
+            found a great tenant for it.</h2>
+          <img class="testimonial-image" src="{{ url_for('static', filename='images/lady-img.jpg') }}"
+            alt="lady-profile">
+          <em>Beverly, Illinois</em>
+        </div>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carocaro" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carocaro" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+
+
+
+
+  </section>
+
+
+  <!-- Press -->
+
+  <section class="colored-section" id="press">
+
+    <div class="row">
+      <div class="col-md-3 col-6">
+        <img class="press-logo" src="{{ url_for('static', filename='images/TechCrunch.png') }}" alt="tc-logo">
+      </div>
+      <div class="col-md-3 col-6">
+        <img class="press-logo" src="{{ url_for('static', filename='images/tnw.png') }}" alt="tnw-logo">
+      </div>
+      <div class="col-md-3 col-6">
+        <img class="press-logo" src="{{ url_for('static', filename='images/bizinsider.png') }}" alt="biz-insider-logo">
+      </div>
+      <div class="col-md-3 col-6">
+        <img class="press-logo" src="{{ url_for('static', filename='images/mashable.png') }}" alt="mashable-logo">
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <!-- Pricing -->
+
+  <section class="white-section" id="pricing">
+
+    <h2 class="section-heading">Plans suitable for everyone.</h2>
+    <p>Simple and affordable price plans to list your property.</p>
+
+    <div class="row">
+
+      <div class="pricing-column col-lg-4 col-md-6 ">
+        <div class="card">
+          <div class="card-header">
+            <h3>Landlord</h3>
+          </div>
+          <div class="card-body price-small">
+            <h2 class="price-text">Free</h2>
+            <p>Normal Listing</p>
+            <p>3 Listings</p>
+            <p>Regional listings</p>
+            <p>Unlimited Website Usage</p>
+            <a type="button" class="btn btn-outline-dark btn-lg w-100" href="" target="_blank">Sign Up</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-column col-lg-4 col-md-6 ">
+        <div class="card">
+          <div class="card-header">
+            <h3>Professional</h3>
+          </div>
+          <div class="card-body price-small">
+            <h2 class="price-text">$49 / mo</h2>
+            <p>Normal Listing</p>
+            <p>20 listings</p>
+            <p>National listings</p>
+            <p>Unlimited Website Usage</p>
+            <a type="button" class="btn btn-dark btn-lg w-100" href="" target="_blank">Sign Up</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-column col-lg-4">
+        <div class="card">
+          <div class="card-header">
+            <h3>Commercial</h3>
+          </div>
+          <div class="card-body">
+            <h2 class="price-text">$99 / mo</h2>
+            <p>Pirority Listing</p>
+            <p>Unlimited Listings</p>
+            <p>International listings</p>
+            <p>Unlimited Website Usage</p>
+            <a type="button" class="btn btn-dark btn-lg w-100" href="" target="_blank">Sign Up</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </section>
+
+
+  <!-- Call to Action -->
+
+  <section class="colored-section" id="cta">
+
+    <div class="container-fluid">
+      <h2 class="section-heading">Find the best tenant or property for yourself Today.</h2>
+      <a type="button" class="btn btn-light btn-lg download-button-2" href="{{url_for('listing')}}" target="_blank">List
+        Property</a>
+    </div>
+
+  </section>
+
+
+  <!-- Footer -->
+
+  <footer class="white-section" id="footer">
+
+    <div class="container-fluid">
+      <div class="footer-icons">
+        <a class="fa-brands fa-twitter footer-icon" href="https://twitter.com/" target="_blank"
+          style="text-decoration: none; color: black;"></a>
+        <a class="fa-brands fa-facebook-f footer-icon" href="https://www.facebook.com/" target="_blank"
+          style="text-decoration: none; color: black;"></a>
+        <a class="fa-brands fa-instagram footer-icon" href="https://www.instagram.com/" target="_blank"
+          style="text-decoration: none; color: black;"></a>
+        <a class="fa-solid fa-envelope footer-icon" href="https://www.gmail.com/" target="_blank"
+          style="text-decoration: none; color: black;"></a>
+      </div>
+      <p>© Copyright PriorityRentals</p>
+    </div>
+
+  </footer>
+
+
+  <!-- Bootstrap script -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+
+</body>
+
+
+
+{%endblock%}
