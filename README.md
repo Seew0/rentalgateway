@@ -1,5 +1,5 @@
 # rentalgateway
-24-Hour project
+16-Hour project
 
 
 INTRODUCTION
