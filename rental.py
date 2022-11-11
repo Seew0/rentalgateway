@@ -1,12 +1,14 @@
 from flask import Flask, jsonify, render_template,flash
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField,IntegerField,EmailField
+from wtforms import StringField, SubmitField,IntegerField
+from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import   SQLAlchemy
 from datetime import datetime
 from flask_migrate import Migrate
 from flask import request
 import json
+from markupsafe import escape
 
 app = Flask(__name__)
 
@@ -17,7 +19,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///owners.db'
 
 #key for form
-with open("hidden.json","r") as KEY:
+with open("filter.json","r") as KEY:
     app.config['SECRET_KEY']= json.load(KEY)
 #init db
 db = SQLAlchemy(app)
