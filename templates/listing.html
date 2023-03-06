@@ -11,7 +11,7 @@
   {%endfor%}
 {%else%}
   <section class="colored-section container-fluid">
-    <h1 class="big-heading">Enter the details of your property:</h1>
+    <h1 class="big-heading">Enter the details of your property</h1>
   </section>
   
   <section class="white-section container-fluid">
@@ -39,13 +39,13 @@
     </div>
 
     <div class="mb-3 form-div">
-      <label for="contacts " class="form-label">{{ form.contacts.label }}</label>
-      {{form.contacts(type="integer", class="form-control", id="contacts", placeholder="Phone Number" ) }}
+      <label for="contacts " class="form-label">{{ form.contact.label }}</label>
+      {{form.contact(type="integer", class="form-control", id="contact", placeholder="Phone Number" ) }}
     </div>
 
     <div class="mb-3 form-div">
       <label for="carpet_size " class="form-label">{{ form.carpet_size.label }}</label>
-      {{form.carpet_size(type="integer", class="form-control", id="carpet_size", placeholder="Phone Number" ) }}
+      {{form.carpet_size(type="integer", class="form-control", id="carpet_size", placeholder="Carpet Size" ) }}
     </div>
     
     

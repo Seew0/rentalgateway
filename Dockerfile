@@ -1,18 +1,13 @@
-FROM alpine
+FROM python:3.8-slim-buster
 
 ENV FLASK_ENV=development FLASK_APP=rental.py
 
-COPY . .
+WORKDIR /app
 
-RUN apk -U ugrade &\
-apk add python3 sqlite py3-pip 
-
-RUN export FLASK_ENV=production &\ 
-export FLASK_APP=rental.py 
+COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
 
-EXPOSE 5000:5000
+EXPOSE 5000
 
-CMD ["flask","run" ]
-
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]

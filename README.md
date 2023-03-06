@@ -1,10 +1,8 @@
-# rentalgateway
-16-Hour project
+# Rental Gateway
 
+## INTRODUCTION
 
-INTRODUCTION
-
-1.1. Purpose
+### 1.1. Purpose
 
 • Creating a house rental gateway where property owners,
 clients, and customers can easily and affordably
@@ -14,7 +12,7 @@ location, and filters (suitable tenant).
 • Tenants can search through the listings according to their
 requirements such as location, budget, and availability.
 
-1.2. Intended audience
+### 1.2. Intended audience
 
 • Students
 • Workers
@@ -22,7 +20,7 @@ requirements such as location, budget, and availability.
 • Families
 • Bachelors
 
-1.3. Scope
+### 1.3. Scope
 
 • Seamless listing and searching of properties
 • Provides a platform for landlords and tenants to find a
@@ -32,22 +30,40 @@ allows tenants to search that database as per their
 requirements using a user interface.
 
 
-OVERALL DESCRIPTION
+## OVERALL DESCRIPTION
 
-2.1. User needs
+### 2.1. User needs
 
 • This website is to cater to the needs of people trying to
 make a quick buck by using their property and the
 students and workers living away from their families.
-2.2. Technology and platform used (frontend and
+
+### 2.2. Technology and platform used (frontend and
 backend)
 
 • Frontend: Html, CSS, javascript , react
-• Backend: flask, sqllite
+• Backend: Flask, sqllite
 
-2.3. Assumptions and Dependencies
+### 2.3. Assumptions and Dependencies
 
 • Assumptions: - The data entered by the owner is
 authentic. Spamming will not happen there.
 • Dependencies: - site is client-side dependent, Web-
 dependent
+
+### Setup
+
+initialise the db by 
+```
+$   python3
+    from rental.py import db
+    db.create_all() 
+```
+
+run the program 
+
+1)First you need to setup docker compose on your system refer [docker-compose installation](https://docs.docker.com/compose/install/)
+2)
+```
+$   docker-compose up
+```

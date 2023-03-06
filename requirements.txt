@@ -1,7 +1,7 @@
 flask
-Flask-WTF
+Flask-WTF==1.0
 WTForms<2.3.0
-Flask-SQLAlchemy
+Flask-SQLAlchemy==1.0
 Flask_migrate
 jinja2<3.1.0
 
