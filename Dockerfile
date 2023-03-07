@@ -4,10 +4,10 @@ ENV FLASK_ENV=development FLASK_APP=rental.py
 
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
+COPY . .
 
 RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+CMD [ "python3", "-m" , "flask", "run", "--host=127.0.0.1"]
