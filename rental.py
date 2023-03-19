@@ -9,6 +9,7 @@ from flask_migrate import Migrate
 from flask import request
 import json
 from markupsafe import escape
+from sqlalchemy import text
 
 app = Flask(__name__)
 
@@ -22,7 +23,9 @@ with open("key.json","r") as KEY:
 #init db
 db = SQLAlchemy(app)
 
-app.app_context().push()
+app.app_context().push()  #validate hora db ki entries
+
+session = db.session()   #connectivity with db
 
 class Owners(db.Model):
     listing_id = db.Column(db.Integer, primary_key=True)
@@ -71,7 +74,6 @@ class FilterForm(FlaskForm):
     submit= SubmitField("Submit")
 
 @app.route('/')
-
 def index():
     return render_template("index.html")
 
@@ -116,25 +118,19 @@ def filter():
         lower_range=form.least_price.data
         upper_range=form.asking_price.data
         price = {"minimum": lower_range, "maximum": upper_range}
-        print(price)
         location=form.location.data
         carpet_size=form.carpet_size.data
         data={"pricing": price, "location": location, "carpet_size": carpet_size}
-        query = "select * from owners where true"
-        if data['location'] != "":
-            query += " and location = '{}'".format(data['location'])
-        if data['carpet_size'] != "":
-            query += " and carpet_size = {}".format(data['carpet_size'])
-        if data['pricing'] != "":
-            minimum = data['pricing']["minimum"]
-            maximum = data['pricing']["maximum"]
-            query += " and pricing between {} and {}".format(minimum, maximum)
-    
+
+        t = text("SELECT pricing ,carpet_size ,location \
+                  FROM owners  \
+                  WHERE location='{}'AND\
+                        pricing BETWEEN {} AND {} AND\
+                        carpet_size='{}'".format(location,lower_range,upper_range,carpet_size))
     # execute query and fetch all results
-        return render_template("search.html",data=data)
+        cursor = session.execute(t).cursor
+        result = cursor.fetchall()
+        return render_template("search.html",data=data, cursor=cursor,result=result)
         
 
     return render_template("filter.html",form=form)
-
-
-

@@ -1,6 +1,6 @@
   {%extends 'base.html'%}
+  
   {%block content%}
-
 {%if name%}
   <h3> Listing added sucessfully!</h3>
   {% for our_user in our_users %}
@@ -10,10 +10,7 @@
    -  {{our_user.carpet_size}}- {{ our_user.BHK }}<br/>
   {%endfor%}
 {%else%}
-  <section class="colored-section container-fluid">
-    <h1 class="big-heading">Enter the details of your property</h1>
-  </section>
-  
+<!-- form -->
   <section class="white-section container-fluid">
   <form method="POST">
     {{ form.hidden_tag() }}

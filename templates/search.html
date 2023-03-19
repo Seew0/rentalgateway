@@ -2,24 +2,26 @@
 
 {% block content%}
 
-    <section class="colored-section container-fluid">
-        <h1 class="big-heading">Suitable house for you:</h1>
-    </section>
+<section class="colored-section container-fluid">
+    <h1 class="big-heading">Suitable house for you</h1>
+</section>
 <div class="container-fluid">
     <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.y8dGDzNc0EIP_cS6SExVtwHaE8%26pid%3DApi&f=1"
         width="400px">
     <p><strong>
             <h1>Price Range:</h1>
-        </strong></p>{{ data['pricing']['minimum']}}-{{data['pricing']['maximum']}}
+        </strong></p>
+        <strong>{{result[0][0]}}</strong>
     <br />
     <p><strong>
             <h1>Surface Area:</h1>
-        </strong></p>{{data['carpet_size']}}</strong>
+        </strong></p>
+        <strong>{{result[0][1]}}</strong>
     <br />
     <p><strong>
             <h1>Locality:</h1>
-        </strong></p>{{data['location'] }}
-
+        </strong></p>
+        <strong>{{ result[0][2] }}</strong>
 </div>
 
 <!-- Footer -->

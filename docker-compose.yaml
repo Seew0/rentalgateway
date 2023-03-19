@@ -1,8 +1,7 @@
 services:
   app:
-    image: seew0/rg
+    image: seew0/rg:latest
     volumes:
       - .:/app
     ports:
       - "5000:5000"
-  
