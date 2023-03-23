@@ -42,7 +42,7 @@ body {
   /* Containers */
   
   .container-fluid{
-    padding: 9% 9%;
+    padding: 5% 5%;
   }
 
   .container-fluid-image {
@@ -111,6 +111,10 @@ body {
   .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
     color: var(--textColor);
   }
+  .form-label
+  {
+    color: var(--textColor);
+  }
 
   .nav-item
   {
@@ -155,14 +159,17 @@ body {
     font-size: 1.2rem;
     border-radius: 1.7rem;
   }
+
   .btn-dark {
     color: var(--textColor);
     background-color: var(--accentColor);
+    border: none;
   }
   .btn-dark:hover
   {
     color: var(--accentColor);
     background-color: var(--textColor);
+    border:none;
   }
   
   btn {
@@ -193,14 +200,15 @@ body {
   
   .btn-outline-light
   {
-    color: var(--textColor);
-    background-color: var(--accentColor);
+    color: var(--accentColor);
+    background-color: var(--textColor);
     border: none;
   }
 
   .btn-outline-light:hover {
-    color: var(--accentColor);
-    background-color: var(--textColor);
+    color: var(--textColor);
+    background-color: var(--accentColor);
+    border: none;
   }
 
   /* search bar */
@@ -330,7 +338,7 @@ body {
     font-size: 1.5rem;
     margin: 0.5rem;
     text-decoration: none;
-    color: black;
+    color: var(--accentColor);
   }
   
   

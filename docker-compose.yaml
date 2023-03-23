@@ -1,6 +1,6 @@
 services:
   app:
-    image: seew0/rg:latest
+    build: .
     volumes:
       - .:/app
     ports:

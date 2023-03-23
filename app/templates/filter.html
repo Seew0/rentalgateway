@@ -16,12 +16,10 @@
                 {{form.asking_price(type="integer", class="form-control", id="asking_price", placeholder="asking price" ) }}
             </div>
     
-    
             <div class="mb-3 form-div">
                 <label for="location " class="form-label">{{ form.location.label }}</label>
                 {{form.location(type="string", class="form-control", id="location", placeholder="Location" ) }}
             </div>
-    
     
             <div class="mb-3 form-div">
                 <label for="carpet_size " class="form-label">{{ form.carpet_size.label }}</label>
@@ -33,27 +31,8 @@
                 {{form.contact(type="integer", class="form-control", id="contact", placeholder="Contact Number" ) }}
             </div>
     
-            {{ form.submit(class="btn-dark btn-lg download-button submit-button") }}
+            {{ form.submit(class="btn-outline-light btn-lg download-button submit-button") }}
         </form>
     </section>
     
-    <!-- Footer -->
-    
-    <footer class="colored-section" id="footer">
-    
-        <div class="container-fluid">
-            <div class="footer-icons">
-                <a class="fa-brands fa-twitter footer-icon" href="https://twitter.com/" target="_blank"
-                    style="text-decoration: none; color: #fff"></a>
-                <a class="fa-brands fa-facebook-f footer-icon" href="https://www.facebook.com/" target="_blank"
-                    style="text-decoration: none; color: #fff"></a>
-                <a class="fa-brands fa-instagram footer-icon" href="https://www.instagram.com/" target="_blank"
-                    style="text-decoration: none; color: #fff"></a>
-                <a class="fa-solid fa-envelope footer-icon" href="https://www.gmail.com/" target="_blank"
-                    style="text-decoration: none; color: #fff"></a>
-            </div>
-            <p style="color: #fff;">© Copyright PriorityRentals</p>
-        </div>
-    
-    </footer>
 {%endblock%}

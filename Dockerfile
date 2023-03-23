@@ -1,12 +1,11 @@
 FROM python:3.8-slim-buster
 
-ENV FLASK_ENV=development FLASK_APP=rental.py
+ENV FLASK_ENV=development FLASK_APP=app/app.py
 
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
 
- 
 RUN pip install -r requirements.txt
 
 RUN python3

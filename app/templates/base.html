@@ -49,11 +49,11 @@
 					</li>
 			
 					<li class="nav-item">
-					  <a class="nav-link " href="{{url_for('filter')}}">List</a>
+					  <a class="nav-link " href="{{url_for('listing')}}">List</a>
 					</li>
 			
 					<li class="nav-item">
-					  <a class="nav-link " href="{{url_for('listing')}}">Rent</a>
+					  <a class="nav-link " href="{{url_for('filter')}}">Rent</a>
 					</li>
 				  </ul>
 				</div>
@@ -64,5 +64,24 @@
 		</div>
 		{% block content %}
 		{% endblock %}
+		    <!-- Footer -->
+    
+			<footer class="colored-section" id="footer">
+    
+				<div class="container-fluid">
+					<div class="footer-icons">
+						<a class="fa-brands fa-twitter footer-icon" href="https://twitter.com/" target="_blank"
+							style="text-decoration: none; color: #fbf7f5"></a>
+						<a class="fa-brands fa-facebook-f footer-icon" href="https://www.facebook.com/" target="_blank"
+							style="text-decoration: none; color: #fbf7f5"></a>
+						<a class="fa-brands fa-instagram footer-icon" href="https://www.instagram.com/" target="_blank"
+							style="text-decoration: none; color: #fbf7f5"></a>
+						<a class="fa-solid fa-envelope footer-icon" href="https://www.gmail.com/" target="_blank"
+							style="text-decoration: none; color: #fbf7f5"></a>
+					</div>
+					<p style="color: #fbf7f5;">© Copyright Rental Gateway</p>
+				</div>
+			
+			</footer>
 	</body>
 </html>
