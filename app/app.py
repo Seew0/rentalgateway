@@ -23,7 +23,7 @@ session = db.session()   #connectivity with db
 
 
 class Owners(db.Model):
-    listing_id = db.Column(db.Integer, primary_key=True)
+    list_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(150), nullable = False, unique=True)
     pricing = db.Column(db.Integer,nullable=False)
@@ -49,9 +49,9 @@ def page_not_found(e):
 
     return render_template('404.html')
 
-@app.route('/listing',methods=['GET','POST'])
+@app.route('/list',methods=['GET','POST'])
 
-def listing():
+def list():
     
     name=None
     form = UserForm()
@@ -79,12 +79,12 @@ def listing():
         flash("Listed Successfully!!")
     our_users=Owners.query.order_by(Owners.data_added)
     
-    return render_template("listing.html",form=form,
+    return render_template("list.html",form=form,
     name=name ,our_users=our_users)
 
-@app.route('/filter',methods=['GET','POST'])
+@app.route('/rent',methods=['GET','POST'])
 
-def filter():
+def rent():
     
     form = FilterForm()
     
@@ -107,4 +107,4 @@ def filter():
         
         return render_template("search.html",data=data, cursor=cursor,result=result)
         
-    return render_template("filter.html",form=form)
+    return render_template("rent.html",form=form)

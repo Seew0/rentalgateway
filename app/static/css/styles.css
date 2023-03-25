@@ -5,11 +5,15 @@ body {
     text-align: center;
     box-sizing: border-box;
   }
-  
+strong{
+  color: var(--textColor);
+}
   h1, h2, h3, h4, h5, h6 
   {
     color: var(--textColor);
     font-weight: 800;
+    padding: 0;
+    margin: 0;
   }
   
   p {
