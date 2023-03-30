@@ -53,17 +53,18 @@ dependent
 
 ### Setup
 
-initialise the db by 
-```
-$   python3
-    from rental.py import db
-    db.create_all() 
-```
-
-run the program 
-
 1)First you need to setup docker compose on your system refer [docker-compose installation](https://docs.docker.com/compose/install/)
 2)
 ```
 $   docker-compose up
+```
+
+### initialise the db by 
+
+1) Open a new terminal 
+```
+$   cd app
+    python3
+    from app.py import db
+    db.create_all() 
 ```
