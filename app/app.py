@@ -1,26 +1,25 @@
-from flask import Flask, jsonify, render_template,flash
-from datetime import datetime
-# from flask_migrate import Migrate
+from flask import Flask, jsonify, render_template
+from flask_migrate import Migrate
 from flask import request
 import json
-from markupsafe import escape
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+from form import ListForm, FilterForm
 from sqlalchemy import text
-from form import UserForm, FilterForm
-from flask_sqlalchemy import   SQLAlchemy
+
+
 
 app = Flask(__name__)
 #database with sqlachemy
 app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///owners.db'
 #key for form
-with open("key.json","r") as KEY:
+with open("app/key.json","r") as KEY:
     app.config['SECRET_KEY']= json.load(KEY)
-
-db = SQLAlchemy(app)
-
 app.app_context().push()  #validate hora db ki entries
 
-session = db.session()   #connectivity with db
-
+db = SQLAlchemy(app)
+session = db.session() 
+app.app_context().push()  #validate hora db ki entries
 
 class Owners(db.Model):
     list_id = db.Column(db.Integer, primary_key=True)
@@ -31,7 +30,8 @@ class Owners(db.Model):
     carpet_size= db.Column(db.Integer,nullable=False)
     contact = db.Column(db.Integer,unique=True)
     data_added = db.Column(db.DateTime, default=datetime.utcnow)
-
+    image_filename = db.Column(db.String)
+    image_url = db.Column(db.String)
 
     #string creation
     def __repr__(self):
@@ -54,33 +54,29 @@ def page_not_found(e):
 def list():
     
     name=None
-    form = UserForm()
+    form = ListForm()
     # validate the form
     if form.validate_on_submit():
-        
-        user=Owners(name=form.name.data,
-        email=form.email.data,
-        pricing=form.pricing.data,
-        location=form.location.data,
-        carpet_size=form.carpet_size.data,
-        contact=form.contact.data)
-        
-        db.session.add(user)
-        db.session.commit()
-        
-        name = form.name.data
-        
-        form.name.data=''
-        form.email.data=''
-        form.location.data=''
-        form.carpet_size.data=''
-        form.contact.data=''
-        
-        flash("Listed Successfully!!")
-    our_users=Owners.query.order_by(Owners.data_added)
-    
-    return render_template("list.html",form=form,
-    name=name ,our_users=our_users)
+            user=Owners(name=form.name.data,
+            email=form.email.data,
+            pricing=form.pricing.data,
+            location=form.location.data,
+            carpet_size=form.carpet_size.data,
+            contact=form.contact.data,
+            image_filename=form.photo.data)
+
+            db.session.add(user)
+            db.session.commit()
+            
+            name = form.name.data
+            
+            form.name.data=''
+            form.email.data=''
+            form.location.data=''
+            form.carpet_size.data=''
+            form.contact.data=''
+            form.photo.data=''
+    return render_template("list.html",form=form,name=name)
 
 @app.route('/rent',methods=['GET','POST'])
 

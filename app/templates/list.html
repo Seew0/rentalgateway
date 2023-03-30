@@ -44,7 +44,11 @@
       <label for="carpet_size " class="form-label">{{ form.carpet_size.label }}</label>
       {{form.carpet_size(type="integer", class="form-control", id="carpet_size", placeholder="Carpet Size" ) }}
     </div>
-    
+
+    <div class="mb-3 form-div">
+      <label for="photo" class="form-label">{{ form.photo.label }}</label>
+      {{form.photo(type="file", class="form-control",id="photo", placeholder="upload")}}
+    </div>
     
     {{ form.submit(class="btn-dark btn-lg download-button submit-button") }}
   </form>
